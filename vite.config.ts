@@ -6,12 +6,8 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
-    // Ensures proper MIME types for JavaScript modules
-    rollupOptions: {
-      output: {
-        manualChunks: undefined
-      }
-    }
+    // Use classic format to avoid MIME type issues
+    target: 'es2015'
   },
   resolve: {
     alias: {
